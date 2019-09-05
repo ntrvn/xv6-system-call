@@ -112,6 +112,10 @@ found:
   memset(p->context, 0, sizeof *p->context);
   p->context->eip = (uint)forkret;
 
+  // initialize newly added properties for proc
+  p->traceOn = 0;
+  p->totalSysCalls = 0;
+
   return p;
 }
 
